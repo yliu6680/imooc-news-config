@@ -49,7 +49,7 @@ zuul:
 
 
 blackIP:
-  continueCounts: ${counts:10}    # ip连续请求的次数
-  timeInterval: ${interval:10}    # ip判断的时间间隔，单位：秒
-  limitTimes: ${times:15}         # 限制的时间，单位：秒
+  continueCounts: 10    # ip连续请求的次数
+  timeInterval: 10    # ip判断的时间间隔，单位：秒
+  limitTimes: 15      # 限制的时间，单位：秒
 
