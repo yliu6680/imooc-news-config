@@ -85,6 +85,7 @@ Invalid test cases, including invalid input, empty parameter, and null parameter
 
 #### Implementation of Interpreting Data To Graph
 
+I utilized the Java IO package to read the city.txt. 
 
 
 #### Implementation Of The Searching Algorithm
@@ -104,6 +105,7 @@ The data structure I used for my algorithm is queue, and implemneted by Java Lin
 
 #### Implementation Of The Cache
 
+##### LRU
 I implemented the Least Recently Used cache with LinkedHashMap. The operations for the cache is shown below:
    
    1. Initilize the LRU cache with a capacity.
@@ -112,15 +114,31 @@ I implemented the Least Recently Used cache with LinkedHashMap. The operations f
 
 So each time the recently used item will be updated to the last node in the LinkedList, and will be kept for longer time. The item will be replaced based on the last time it is used by the user. 
 
+##### Cache Key Value Pair
+
+I store the the two cities names and separated with ":" as the key in the cache, and the searching result of the BFS as the value in the cache.
+
+Because the graph is non-directional, so we could have two ways to store the cities name in the cache. For example, there are an input the origin city is A, and destination city is B.
+
+The first way is to store both pairs of city in the cache, so we will have "A:B", "B:A" as key in our cache. So each time when we try to search in the cache, we could just search one time in the cache. The second way is only store one pair of city in the cache, se we only have "A:B" as key in our cache. So each time when we try to search the cache, we could search two times in the cache, one for "A:B", and the another one for "B:A".
+
+I utilized the second way, because it could save space in the cache memory. 
+
+So in the end, if user search the cities A, B in our applcation, and they have connection, then the cache will save { key: "A:B", value: "Yes" }. If an other user search cities B, A in our application, we will firstly try to get value from cache by cache.get("B:A"), and then try with cache.get("A:B"), and we could get the value. 
+
 #### Analysis Of The Algorithm
 
-Assumes there are N lines in the city.txt file, M city names are in the file, and the capacity of the cache is C. And hashmap and hashset will work perfectly, so each operation ill only cost O(1).
+Assumes there are N lines in the city.txt file, M city names are in the file, and the capacity of the cache is C. 
+Assumes hashmap and hashset will work perfectly, so each operation ill only cost O(1).
+Java IO package will not be discussed in this section.
 
-The
+##### File Reader
+The time complexity of reading file will be O(N). However, each time, the application only read the file one time, and then store the graph in memory. So it will not affect a lot for the RESTful API.
 
-The BFS:
+##### Graph Search
+The BFS: 
 
-The BFS algorithm will
+The worst case BFS algorithm will search the whole graph.
 
 #### Parameters validation
 
