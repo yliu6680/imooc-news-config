@@ -59,6 +59,14 @@ San Antonio, Chicago
 Dallas, Chicago
 ```
 
+The application could be called by using the follow URL pattern, http://localhost:8080?origin={city1}&destination={city2}.
+
+Basic test cases between Boston and Newark, Boston and Philadelphia, Philadelphia and Trenton are shown below.
+
+![image](https://github.com/lexsaints/powershell/blob/master/IMG/ps2.png)
+
+
+
 12. Final steps before you hit send
 Ok, now that you’ve written your README, you’re almost ready to hit send! Before you do that, take the time to double check all of your work using the following checklist:
 
