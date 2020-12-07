@@ -83,17 +83,44 @@ Invalid test cases, including invalid input, empty parameter, and null parameter
 
 ## Anlysis And Implementations
 
+#### Implementation of Interpreting Data To Graph
+
+
+
 #### Implementation Of The Searching Algorithm
 
+I implemented the algorithm by Breath First Search, it's an algorithm first expand all neighbour nodes of the origin node, and then go deeper of the graph.
 
+The data structure I used for my algorithm is queue, and implemneted by Java LinkedList. I also used hashset to record all visited node, in case there are any loops in the graph. The stops could be describe as follow:
+
+   1. Add the origin city name in the queue.
+   2. Poll the queue, and get a city name. 
+   3. Find the city name in the heads of all adjacent lists, all heads are the keys of the hashmap. 
+   4. Find the adjacent list for the head.
+   5. Iterate the hashset. If we find the destination city name in the hashset, then we are done. 
+   6. Otherwise, if the city name is not in the visited set, then add the city name in to the queue and visited hashset.
+   7. Repeat the algorithm from step.2 - step.6, until the queue is empty or we find the final result.
+   8. If we still not find the result, then the two cities are not connected.
 
 #### Implementation Of The Cache
 
+I implemented the Least Recently Used cache with LinkedHashMap. The operations for the cache is shown below:
+   
+   1. Initilize the LRU cache with a capacity.
+   2. Get item from the HashMap, if it exists, then we need to swap the item with the last node in the LinkedList of the LinkedHashMap.
+   3. Put item in the HashMap, if the capacity has already fulled, then remove the first node in the LinkedList of LinkedHashMap.
 
+So each time the recently used item will be updated to the last node in the LinkedList, and will be kept for longer time. The item will be replaced based on the last time it is used by the user. 
 
 #### Analysis Of The Algorithm
 
+Assumes there are N lines in the city.txt file, M city names are in the file, and the capacity of the cache is C. And hashmap and hashset will work perfectly, so each operation ill only cost O(1).
 
+The
+
+The BFS:
+
+The BFS algorithm will
 
 #### Parameters validation
 
