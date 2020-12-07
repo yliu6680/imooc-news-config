@@ -23,28 +23,29 @@ The challenge is implemented by Spring Boot 2, Java 8. I also utilized Spring Bo
 
 I added this functionality in the Spring Boot application with life cycle method, so the data will be only loaded one time when the application is initializing. And the data will be interpreted into a non-directed graph. I utilized hash map and hash set to store the map as adjacent lists.
 
+The city.txt file is stored in the resources folder of the maven project, users could replace the txt file with their own.
+
 #### Implemented Breath First Search (BFS) algorithem to search the possible roads between two different input cities.
 
 I utilized BFS to search whether the two cities are connected in the graph from the adjacent list, more details could be found in the analysis section.
 
 #### Built controller to let user utilize GET request and URL parameter to perform the search.
 
-I constructed RESTful API to let users to call the related controllers and service.
+I constructed RESTful API to let users to call the related controllers and service. I have added validation steps in controller and service layer, so if the input parameter is not valid, the application will return No connections.
 
 #### Created tests
 
-I created more than 20 unit tests and integration tests for the application, covered nearly all classes and methods I created.
+I created more than 20 unit tests and integration tests for the application, covered nearly all classes and methods of the controller, service, and utils code.
 
 ## Other Bonus
 
 #### Add a cache to improve the performance
 
-I added a cache layer for the application. So once the application is started, every valid query and result of the cities connection will be stored into a cache. I implemented the cache with Java Collection framework, and the cache is a LRU cache. 
-
+I added a cache layer for the application. So once the application is started, every valid query and result of the cities connection will be stored into a cache. I implemented the cache with LinkedHashMap in Java Collection framework, and the cache is a LRU cache. 
 
 ## Demonstration Of The Application
 
-The whole cities data in the application is listed below:
+The whole cities data in the city.txt file is listed below:
 ```
 Boston, New York
 Philadelphia, Newark
