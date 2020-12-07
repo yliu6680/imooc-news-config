@@ -10,16 +10,14 @@ By [Paul Liu](mailto:paulliu6680@gmail.com)
 3. Install dependencies using `mvn install`
 4. Run tests using `mvn test`
 5. Go to the target, and start the appllication server using `java -jar ***.jar`
-6. Navigate to app in [browser](http://localhost:8080)
+6. Navigate to app at [(http://localhost:8080](http://localhost:8080)
 7. Or import the maven project into IDE to run in the development environment.
 
 ## Environments
 
-I mainly used Spring Boot 2, Java 8 to implement the challange.
-I also utilized Spring Boot, Junit, Mockito to generate unit test and integration test for the application.
-The project is built by Maven.
+The challenge is implemented by Spring Boot 2, Java 8. I also utilized Spring Boot, Junit, Mockito to generate unit test and integration test for the application. The project is built by Maven.
 
-## Requirements
+## Badic Requirements
 
 #### Build a two player tic tac toe app where a game is played by
 #### alternating clicks until the game is won by X, O or is a tie.
