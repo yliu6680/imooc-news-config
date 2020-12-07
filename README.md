@@ -9,7 +9,7 @@ By [Paul Liu](mailto:paulliu6680@gmail.com)
    `git clone git@github.com:janephilipps/tic-tac-toe.git`
 3. Install dependencies using `mvn install`
 4. Run tests using `mvn test`
-5. Go to the target, and start the appllication server using `java -jar ***.jar`
+5. Go to the target, and start the application server using `java -jar ***.jar`
 6. Open browser or to other test tools, and navigate to [(http://localhost:8080](http://localhost:8080)
 7. Or import the maven project into IDE to run in the development environment.
 
@@ -25,7 +25,7 @@ I added this functionality in the Spring Boot application with life cycle method
 
 The city.txt file is stored in the resources folder of the maven project, users could replace the txt file with their own.
 
-#### Implemented Breath First Search (BFS) algorithem to search the possible roads between two different input cities.
+#### Implemented Breath First Search (BFS) algorithm to search the possible roads between two different input cities.
 
 I utilized BFS to search whether the two cities are connected in the graph from the adjacent list, more details could be found in the analysis section.
 
@@ -81,7 +81,31 @@ Invalid test cases, including invalid input, empty parameter, and null parameter
 
 ![image](https://github.com/yliu6680/imooc-news-config/blob/master/Null_Input.png)
 
+## Anlysis And Implementations
 
+#### Implementation Of The Searching Algorithm
+
+
+
+#### Implementation Of The Cache
+
+
+
+#### Analysis Of The Algorithm
+
+
+
+#### Parameters validation
+
+Parameter vlidations are added in the controller layer and the service layer, so we could get No Connection response when user's request parameters are not valid.
+
+#### Tests 
+
+I wrote unit test cases for the graph search algorithm, and also test it in the service layer and controller layer with stubs, mockito, and MockMvc. I also utilized Spring Boot to generate integration test for the whole RESTful API. 
+
+#### Extensible Interfaces
+
+I created CityDataReader interface and CityDataCache interface, and implements them with Java IO and LRU cache in this application. It could be easy to add more implementation based on the interfaces to get the cities data from database, cloud storage, and cache from other cache like LFU cache, or database Redis or cloud cache.
 
 
 12. Final steps before you hit send
