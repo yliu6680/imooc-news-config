@@ -19,27 +19,27 @@ The challenge is implemented by Spring Boot 2, Java 8. I also utilized Spring Bo
 
 ## Basic Requirements
 
-#### Build a Spring Boot application that could read cities data from file (.txt file).
+### Build a Spring Boot application that could read cities data from file (.txt file).
 
 I added this functionality in the Spring Boot application with life cycle method, so the data will be only loaded one time when the application is initializing. And the data will be interpreted into a non-directed graph. I utilized hash map and hash set to store the map as adjacent lists.
 
 The city.txt file is stored in the resources folder of the maven project, users could replace the txt file with their own.
 
-#### Implemented Breath First Search (BFS) algorithm to search the possible roads between two different input cities.
+### Implemented Breath First Search (BFS) algorithm to search the possible roads between two different input cities.
 
 I utilized BFS to search whether the two cities are connected in the graph from the adjacent list, more details could be found in the analysis section.
 
-#### Built controller to let user utilize GET request and URL parameter to perform the search.
+### Built controller to let user utilize GET request and URL parameter to perform the search.
 
 I constructed RESTful API to let users to call the related controllers and service. I have added validation steps in controller and service layer, so if the input parameter is not valid, the application will return No connections.
 
-#### Created tests
+### Created tests
 
 I created more than 20 unit tests and integration tests for the application, covered nearly all classes and methods of the controller, service, and utils code.
 
 ## Other Bonus
 
-#### Add a cache to improve the performance
+### Add a cache to improve the performance
 
 I added a cache layer for the application. So once the application is started, every valid query and result of the cities connection will be stored into a cache. I implemented the cache with LinkedHashMap in Java Collection framework, and the cache is a LRU cache. 
 
@@ -61,7 +61,7 @@ Dallas, Chicago
 
 The application could be called by using the follow URL pattern, http://localhost:8080?origin={city1}&destination={city2}.
 
-#### Normal test cases
+### Normal test cases
 Basic test cases between Boston and Newark, Boston and Philadelphia, Philadelphia and Trenton, and non existed cities are shown below.
 
 ![image](https://github.com/yliu6680/imooc-news-config/blob/master/Boston_Newark.png)
@@ -72,7 +72,7 @@ Basic test cases between Boston and Newark, Boston and Philadelphia, Philadelphi
 
 ![image](https://github.com/yliu6680/imooc-news-config/blob/master/Non_Exi.png)
 
-#### Invalid test cases
+### Invalid test cases
 Invalid test cases, including invalid input, empty parameter, and null parameter are shown below.
 
 ![image](https://github.com/yliu6680/imooc-news-config/blob/master/Invalid_Name.png)
@@ -83,12 +83,12 @@ Invalid test cases, including invalid input, empty parameter, and null parameter
 
 ## Anlysis And Implementations
 
-#### Implementation of Interpreting Data To Graph
+### Implementation of Interpreting Data To Graph
 
 I utilized the Java IO package to read the city.txt. 
 
 
-#### Implementation Of The Searching Algorithm
+### Implementation Of The Searching Algorithm
 
 I implemented the algorithm by Breath First Search, it's an algorithm first expand all neighbour nodes of the origin node, and then go deeper of the graph.
 
@@ -103,9 +103,9 @@ The data structure I used for my algorithm is queue, and implemneted by Java Lin
    7. Repeat the algorithm from step.2 - step.6, until the queue is empty or we find the final result.
    8. If we still not find the result, then the two cities are not connected.
 
-#### Implementation Of The Cache
+### Implementation Of The Cache
 
-##### LRU
+#### LRU
 I implemented the Least Recently Used cache with LinkedHashMap. The operations for the cache is shown below:
    
    1. Initilize the LRU cache with a capacity.
@@ -114,7 +114,7 @@ I implemented the Least Recently Used cache with LinkedHashMap. The operations f
 
 So each time the recently used item will be updated to the last node in the LinkedList, and will be kept for longer time. The item will be replaced based on the last time it is used by the user. 
 
-##### Cache Key Value Pair
+#### Cache Key Value Pair
 
 I store the the two cities names and separated with ":" as the key in the cache, and the searching result of the BFS as the value in the cache.
 
@@ -126,29 +126,29 @@ I utilized the second way, because it could save space in the cache memory.
 
 So in the end, if user search the cities A, B in our applcation, and they have connection, then the cache will save { key: "A:B", value: "Yes" }. If an other user search cities B, A in our application, we will firstly try to get value from cache by cache.get("B:A"), and then try with cache.get("A:B"), and we could get the value. 
 
-#### Analysis Of The Algorithm
+### Analysis Of The Algorithm
 
 Assumes there are N lines in the city.txt file, M city names are in the file, and the capacity of the cache is C. 
 Assumes hashmap and hashset will work perfectly, so each operation ill only cost O(1).
 Java IO package will not be discussed in this section.
 
-##### File Reader
+#### File Reader
 The time complexity of reading file will be O(N). However, each time, the application only read the file one time, and then store the graph in memory. So it will not affect a lot for the RESTful API.
 
-##### Graph Search
+#### Graph Search
 The BFS: 
 
 The worst case BFS algorithm will search the whole graph.
 
-#### Parameters validation
+### Parameters validation
 
 Parameter vlidations are added in the controller layer and the service layer, so we could get No Connection response when user's request parameters are not valid.
 
-#### Tests 
+### Tests 
 
 I wrote unit test cases for the graph search algorithm, and also test it in the service layer and controller layer with stubs, mockito, and MockMvc. I also utilized Spring Boot to generate integration test for the whole RESTful API. 
 
-#### Extensible Interfaces
+### Extensible Interfaces
 
 I created CityDataReader interface and CityDataCache interface, and implements them with Java IO and LRU cache in this application. It could be easy to add more implementation based on the interfaces to get the cities data from database, cloud storage, and cache from other cache like LFU cache, or database Redis or cloud cache.
 
