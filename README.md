@@ -124,11 +124,11 @@ The first way is to store both pairs of city in the cache, so we will have "A:B"
 
 I utilized the second way, because it could save space in the cache memory. 
 
-So in the end, if user search the cities A, B in our applcation, and they have connection, then the cache will save { key: "A:B", value: "Yes" }. If an other user search cities B, A in our application, we will firstly try to get value from cache by cache.get("B:A"), and then try with cache.get("A:B"), and we could get the value. 
+So in the end, if user search the cities A, B in our applcation, and they have connection, then the cache will save ***{ key: "A:B", value: "Yes" }***. If an other user search cities B, A in our application, we will firstly try to get value from cache by ***cache.get("B:A")***, and then try with ***cache.get("A:B")***, and we could get the value. 
 
 ### Analysis Of The Algorithm
 
-Assumes there are N lines in the city.txt file, M city names are in the file, and the capacity of the cache is C. 
+Assumes there are ***N*** lines in the city.txt file, ***M*** city names are in the file, and the capacity of the cache is ***C***. 
 Assumes hashmap and hashset will work perfectly, so each operation ill only cost O(1).
 Java IO package will not be discussed in this section.
 
@@ -136,9 +136,14 @@ Java IO package will not be discussed in this section.
 The time complexity of reading file will be O(N). However, each time, the application only read the file one time, and then store the graph in memory. So it will not affect a lot for the RESTful API.
 
 #### Graph Search
-The BFS: 
+The ***time complexity*** of the BFS is ***O(M)***, because the worst case will search whole graph.
+The ***space complexity*** of the BFS is ***O(M)***, bacause in the worst case, the queue has to store every node of the graph, and the whole graph has M nodes,
 
-The worst case BFS algorithm will search the whole graph.
+#### Cache
+The ***time complexity*** of the BFS is ***O(1)***, because the worst case will search whole graph.
+The ***space complexity*** of the BFS is ***O(1)***, the whole graph has M nodes.
+
+So with the cache, user could finally get time time
 
 ### Parameters validation
 
