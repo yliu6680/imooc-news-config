@@ -63,7 +63,8 @@ The application could be called by using the follow URL pattern, http://localhos
 
 Basic test cases between Boston and Newark, Boston and Philadelphia, Philadelphia and Trenton are shown below.
 
-![image](https://github.com/lexsaints/powershell/blob/master/IMG/ps2.png)
+
+
 
 
 
