@@ -10,44 +10,53 @@ By [Paul Liu](mailto:paulliu6680@gmail.com)
 3. Install dependencies using `mvn install`
 4. Run tests using `mvn test`
 5. Go to the target, and start the appllication server using `java -jar ***.jar`
-6. Navigate to app at [(http://localhost:8080](http://localhost:8080)
+6. Open browser or to other test tools, and navigate to [(http://localhost:8080](http://localhost:8080)
 7. Or import the maven project into IDE to run in the development environment.
 
 ## Environments
 
 The challenge is implemented by Spring Boot 2, Java 8. I also utilized Spring Boot, Junit, Mockito to generate unit test and integration test for the application. The project is built by Maven.
 
-## Badic Requirements
+## Basic Requirements
 
-#### Build a two player tic tac toe app where a game is played by
-#### alternating clicks until the game is won by X, O or is a tie.
+#### Build a Spring Boot application that could read cities data from file (.txt file).
 
-I added a `message` that displays which player's turn it is based on the
-number of turns taken. The `message` also displays whether a player has
-won or if there is a tie.
+I added this functionality in the Spring Boot application with life cycle method, so the data will be only loaded one time when the application is initializing. And the data will be interpreted into a non-directed graph. I utilized hash map and hash set to store the map as adjacent lists.
 
-#### Include a reset button so that when a game ends, the board can be
-#### cleared and a new game can begin.
+#### Implemented Breath First Search (BFS) algorithem to search the possible roads between two different input cities.
 
-The reset button calls a method `_resetBoard()` which calls another
-method `_getInitialState()` to reset the board.
+I utilized BFS to search whether the two cities are connected in the graph from the adjacent list, more details could be found in the analysis section.
 
-## Bonuses!
+#### Built controller to let user utilize GET request and URL parameter to perform the search.
 
-#### Make the board fully responsive
+I constructed RESTful API to let users to call the related controllers and service.
 
-I used the `vmin` unit of measure to make the `width`, `height`, and
-`border` of the squares fully responsive.
+#### Created tests
 
-#### Allow for more than 1 game to be played simultaneously
+I created more than 20 unit tests and integration tests for the application, covered nearly all classes and methods I created.
 
-I have a state within the `App` that keeps track of the number of boards.
-Because each board also has its own state, gameplay across multiple boards can
-happen simultaneously without interference.
-Back to top
+## Other Bonus
 
-Share this post on →   
+#### Add a cache to improve the performance
 
+I added a cache layer for the application. So once the application is started, every valid query and result of the cities connection will be stored into a cache. I implemented the cache with Java Collection framework, and the cache is a LRU cache. 
+
+
+## Demonstration Of The Application
+
+The whole cities data in the application is listed below:
+```
+Boston, New York
+Philadelphia, Newark
+Newark, Boston
+Trenton, Albany
+Los Angeles, Irvine
+Seattle, Los Angeles
+Houston, Boston
+Chicago, San Fransisco
+San Antonio, Chicago
+Dallas, Chicago
+```
 
 12. Final steps before you hit send
 Ok, now that you’ve written your README, you’re almost ready to hit send! Before you do that, take the time to double check all of your work using the following checklist:
