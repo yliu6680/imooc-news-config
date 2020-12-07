@@ -41,7 +41,7 @@ I created more than 20 unit tests and integration tests for the application, cov
 
 ### Add a cache to improve the performance
 
-I added a cache layer for the application. So once the application is started, every valid query and result of the cities connection will be stored into a cache. I implemented the cache with LinkedHashMap in Java Collection framework, and the cache is a LRU cache. 
+I added a cache layer for the application. So once the application is started, every valid query and result of the cities connection will be stored into a cache. I implemented the cache with LinkedHashMap in Java Collection framework, and the cache is a LRU cache. Because LRU cache could help to store the hot data when user query the data in the graph, and next time the same query is called, then we need not to perform the query algorithm again.
 
 ## Demonstration Of The Application
 
@@ -132,8 +132,10 @@ Assumes there are ***N*** lines in the city.txt file, ***M*** city names are in 
 Assumes hashmap and hashset will work perfectly, so each operation ill only cost O(1).
 Java IO package will not be discussed in this section.
 
-#### File Reader
-The time complexity of reading file will be O(N). However, each time, the application only read the file one time, and then store the graph in memory. So it will not affect a lot for the RESTful API.
+#### Generate Graph
+The time complexity of reading file will be O(N), because there are totally N lines in the file, and we only used O(1) operation per line.
+
+However, each time, the application only read the file one time, and then store the graph in memory. So it will not affect a lot for the RESTful API.
 
 #### Graph Search
 The ***time complexity*** of the BFS is ***O(M)***, because the worst case will search whole graph.
