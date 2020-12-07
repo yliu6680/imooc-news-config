@@ -156,31 +156,3 @@ I wrote unit test cases for the graph search algorithm, and also test it in the 
 ### Extensible Interfaces
 
 I created CityDataReader interface and CityDataCache interface, and implements them with Java IO and LRU cache in this application. It could be easy to add more implementation based on the interfaces to get the cities data from database, cloud storage, and cache from other cache like LFU cache, or database Redis or cloud cache.
-
-
-12. Final steps before you hit send
-Ok, now that you’ve written your README, you’re almost ready to hit send! Before you do that, take the time to double check all of your work using the following checklist:
-
-Re-read the take-home challenge instructions to make sure you didn’t miss any requirements
-Review your app’s code to ensure that it shines
-Run your app’s automated tests and make sure they are all passing
-Test your app manually and make sure everything is working properly
-Test your app installation instructions from your README
-Start an email draft and copy your README into it for convenience
-If requested, make sure to attach a zip file of your code
-Write an email to your contact at the company
-Your email can be short and sweet - I always like to highlight something I enjoyed about the challenge or something I learned. Here’s an example:
-
-Hi <NAME>,
-
-I hope you had a great week! I had fun diving back into React with this
-challenge. Here is my github repo and I've included my README below.
-Please let me know if you have any questions.
-
-Just so you know, I'm interviewing with a few other companies and I just
-received an offer yesterday - I need to get back to them next week.
-Of course, I am excited about the opportunity at <COMPANY NAME>, so I'm
-looking forward to hearing from you!
-
-Thanks,
-<NAME>
