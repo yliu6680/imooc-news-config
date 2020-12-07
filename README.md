@@ -63,7 +63,19 @@ The application could be called by using the follow URL pattern, http://localhos
 
 Basic test cases between Boston and Newark, Boston and Philadelphia, Philadelphia and Trenton are shown below.
 
+![image](https://github.com/yliu6680/imooc-news-config/blob/master/Boston_Newark.png)
 
+![image](https://github.com/yliu6680/imooc-news-config/blob/master/Bos_Phi.png)
+
+![image](https://github.com/yliu6680/imooc-news-config/blob/master/Phi_Alb.png)
+
+Invalid test cases, including invalid input, empty parameter, and null parameter are shown below.
+
+![image](https://github.com/yliu6680/imooc-news-config/blob/master/Invalid_Name.png)
+
+![image](https://github.com/yliu6680/imooc-news-config/blob/master/Empty_Name.png)
+
+![image](https://github.com/yliu6680/imooc-news-config/blob/master/Null_Input.png)
 
 
 
