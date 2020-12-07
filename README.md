@@ -87,6 +87,7 @@ Invalid test cases, including invalid input, empty parameter, and null parameter
 
 I utilized the Java IO package to read the city.txt. 
 
+Hashmap and Hashset is usded to store the graph as adjacent list. Hashmap's key will be the heads of all lists, and value will be the adjacent list. Hashset will store the adjacent list for each head. In each line, I will format the string and split it into to cities name, and try to update the adjacent list. Each city name could be head of the adjacent list, so we need to find the list and add another city name in the hashset.
 
 ### Implementation Of The Searching Algorithm
 
