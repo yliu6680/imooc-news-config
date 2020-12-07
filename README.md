@@ -1,26 +1,23 @@
-# Tic Tac Toe
+# City Connection Take Home Exercise
 
-By [Jane Philipps](mailto:jane@fullstackinterviewing.com)
-
-[janephilipps.github.io](http://janephilipps.github.io)
+By [Paul Liu](mailto:paulliu6680@gmail.com)
 
 ## Instructions
 
 1. Navigate to [repo](https://github.com/janephilipps/tic-tac-toe)
 2. Clone locally using
    `git clone git@github.com:janephilipps/tic-tac-toe.git`
-3. Install dependencies using `npm install`
-4. Run tests using `npm test`
-5. Start your server using `npm start`
-6. Navigate to app in [browser](http://localhost:3000)
-7. Enjoy!
+3. Install dependencies using `mvn install`
+4. Run tests using `mvn test`
+5. Go to the target, and start the appllication server using `java -jar ***.jar`
+6. Navigate to app in [browser](http://localhost:8080)
+7. Or import the maven project into IDE to run in the development environment.
 
+## Environments
 
-## Discussion
-
-I used the following technologies: HTML, CSS, React, Jest, and Enzyme.
-I used [create-react-app](https://goo.gl/26jfy4)
-to generate the scaffolding for this app.
+I mainly used Spring Boot 2, Java 8 to implement the challange.
+I also utilized Spring Boot, Junit, Mockito to generate unit test and integration test for the application.
+The project is built by Maven.
 
 ## Requirements
 
