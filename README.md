@@ -141,9 +141,9 @@ The ***space complexity*** of the BFS is ***O(M)***, bacause in the worst case, 
 
 #### Cache
 The ***time complexity*** of the BFS is ***O(1)***, because the worst case will search whole graph.
-The ***space complexity*** of the BFS is ***O(1)***, the whole graph has M nodes.
+The ***space complexity*** of the BFS is ***O(1)***, because each operation doesn't need extra space.
 
-So with the cache, user could finally get time time
+So with the cache, user could finally get better time complexity, and for each query, they could have time complexity smaller than ***O(M)***, where M is the number of city in the data file.
 
 ### Parameters validation
 
