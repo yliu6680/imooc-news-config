@@ -61,7 +61,8 @@ Dallas, Chicago
 
 The application could be called by using the follow URL pattern, http://localhost:8080?origin={city1}&destination={city2}.
 
-#### Basic test cases between Boston and Newark, Boston and Philadelphia, Philadelphia and Trenton are shown below.
+#### Normal test cases
+Basic test cases between Boston and Newark, Boston and Philadelphia, Philadelphia and Trenton, and non existed cities are shown below.
 
 ![image](https://github.com/yliu6680/imooc-news-config/blob/master/Boston_Newark.png)
 
@@ -69,7 +70,10 @@ The application could be called by using the follow URL pattern, http://localhos
 
 ![image](https://github.com/yliu6680/imooc-news-config/blob/master/Phi_Alb.png)
 
-#### Invalid test cases, including invalid input, empty parameter, and null parameter are shown below.
+![image](https://github.com/yliu6680/imooc-news-config/blob/master/Non_Exi.png)
+
+#### Invalid test cases
+Invalid test cases, including invalid input, empty parameter, and null parameter are shown below.
 
 ![image](https://github.com/yliu6680/imooc-news-config/blob/master/Invalid_Name.png)
 
